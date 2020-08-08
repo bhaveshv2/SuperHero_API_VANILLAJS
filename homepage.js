@@ -66,7 +66,10 @@ function createNew(data){
 
             //link the particular id to button
             favImage.setAttribute('superheroid',data.results[i].id);
-            favourite.setAttribute('divtype','fav-btn');
+            favImage.setAttribute('divtype','fav-btn');
+            superheroName.setAttribute('superheroid',data.results[i].id);
+            superheroName.setAttribute('divType','details-btn');
+
             results.appendChild(superhero);
         }
     }
@@ -75,20 +78,28 @@ function createNew(data){
 results.onclick = function(e){
     var id = e.target.getAttribute('superheroid');
     var div = e.target.getAttribute('divtype');
+    console.log(e.target);
 
-    if(id === null){
-        return;
+    if(div === 'fav-btn'){
+        if(id === null){
+            return;
+        }
+        if(favourites.includes(id)){
+            var i = favourites.indexOf(id);
+            favourites.splice(i,1);
+            e.target.src = 'https://image.flaticon.com/icons/svg/3208/3208597.svg';
+        }else{
+            favourites.push(id);
+            e.target.src = 'https://image.flaticon.com/icons/svg/3208/3208707.svg';
+        }
+        console.log(favourites);
+    
+        localStorage.setItem('listFavourites',JSON.stringify(favourites));
+    }else if(div === 'details-btn'){
+        if(id === null){
+            return;
+        }
+        window.open("heroDetails.html?id="+id,"_self");
     }
-    if(favourites.includes(id)){
-        var i = favourites.indexOf(id);
-        favourites.splice(i,1);
-        e.target.src = 'https://image.flaticon.com/icons/svg/3208/3208597.svg';
-    }else{
-        favourites.push(id);
-        e.target.src = 'https://image.flaticon.com/icons/svg/3208/3208707.svg';
-    }
-    console.log(favourites);
-
-    localStorage.setItem('listFavourites',JSON.stringify(favourites));
     
 }

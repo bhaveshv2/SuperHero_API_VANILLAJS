@@ -44,23 +44,36 @@ function createHero(data){
     heroCard.appendChild(favIcon);
 
     heroCard.setAttribute('id',data.id);
+    icon.setAttribute('divtype','fav-btn');
+    heroName.setAttribute('divtype','details-btn');
 
     favourite.appendChild(heroCard);
 }
 
 favourite.onclick = function(e){
-    if(e.target.id === 'icon'){
-        e.target.parentNode.parentNode.remove();
-        
-        var heroId = e.target.parentNode.parentNode.getAttribute('id');
-        var j = listFavourites.indexOf(heroId);
-        listFavourites.splice(j,1);
-        console.log(listFavourites);
-    }
+    var div = e.target.getAttribute('divtype');
 
-    localStorage.setItem('listFavourites',JSON.stringify(listFavourites));
-
-    if(listFavourites.length===0){
-        favourite.innerHTML = '<div style="color:white;text-align:center">No one is your Favourite!</div>';
+    if(div === 'fav-btn'){
+        if(e.target.id === 'icon'){
+            e.target.parentNode.parentNode.remove();
+            
+            var heroId = e.target.parentNode.parentNode.getAttribute('id');
+            var j = listFavourites.indexOf(heroId);
+            listFavourites.splice(j,1);
+            console.log(listFavourites);
+        }
+    
+        localStorage.setItem('listFavourites',JSON.stringify(listFavourites));
+    
+        if(listFavourites.length===0){
+            favourite.innerHTML = '<div style="color:white;text-align:center">No one is your Favourite!</div>';
+        }
+    }else if(div === 'details-btn'){
+        var heroId = e.target.parentNode.getAttribute('id');
+        console.log(heroId);
+        if(heroId === null){
+            return;
+        }
+        window.open("heroDetails.html?id="+heroId,"_self");
     }
 }
