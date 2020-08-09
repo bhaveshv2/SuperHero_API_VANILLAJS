@@ -28,4 +28,4 @@ Functionalities-
 * Details Page  * GET Request - 'https://superheroapi.com/api.php/access-token/id'
                 * Here it is all the details of the superHero fetching using id of the superhero.
               
-*** You can get from the API link - "https://www.superheroapi.com/" (and login using facebook).
+*** You can get "access-token" from the API link - "https://www.superheroapi.com/" (and login using facebook).
