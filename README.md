@@ -14,10 +14,11 @@ Technology used-
 * Vanilla JS
 
 Functionalities-
-* Homepage * GET Request - 'https://www.superheroapi.com/api.php/access-token/search/inputValue'
-           * In order to suggest the superhero the api and js suggest dynamically and update on each keyword on input bar.
-           * Click on the name of the superhero get to the details page
-           * Click on the heart of the superhero right side, it will create persistent favourite list array object.
+* Homepage
+           - GET Request - 'https://www.superheroapi.com/api.php/access-token/search/inputValue'
+           - In order to suggest the superhero the api and js suggest dynamically and update on each keyword on input bar.
+           - Click on the name of the superhero get to the details page
+           - Click on the heart of the superhero right side, it will create persistent favourite list array object.
            
 * Favourites Page * GET Request - 'https://superheroapi.com/api.php/access-token/id/image'
                   * Here using storing the superhero id and fetch the favourite array object from above, show the superhero on the page.
