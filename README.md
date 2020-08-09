@@ -20,11 +20,12 @@ Functionalities-
   - Click on the name of the superhero get to the details page
   - Click on the heart of the superhero right side, it will create persistent favourite list array object.
            
-* Favourites Page * GET Request - 'https://superheroapi.com/api.php/access-token/id/image'
-                  * Here using storing the superhero id and fetch the favourite array object from above, show the superhero on the page.
-                  * Array is stored in localstorage.
-                  * Click on the heart leads to disappear the superhero favourite list from parentNode as well as from the array.
-                  * Click on the Name of the superhero leads to the details page.
+* Favourites Page 
+  - GET Request - 'https://superheroapi.com/api.php/access-token/id/image'
+    - Here using storing the superhero id and fetch the favourite array object from above, show the superhero on the page.
+    - Array is stored in localstorage.
+    - Click on the heart leads to disappear the superhero favourite list from parentNode as well as from the array.
+    - Click on the Name of the superhero leads to the details page.
                   
 * Details Page  * GET Request - 'https://superheroapi.com/api.php/access-token/id'
                 * Here it is all the details of the superHero fetching using id of the superhero.
